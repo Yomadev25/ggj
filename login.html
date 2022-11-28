@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Site Metas -->
+<title>Game Info</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="style.css">
+<!-- Colors CSS -->
+<link rel="stylesheet" href="css/colors.css">
+<!-- ALL VERSION CSS -->
+<link rel="stylesheet" href="css/versions.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
+<!-- font family -->
+<!-- font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<!-- end font family -->
+<!-- end font family -->
+<link rel="stylesheet" href="css/3dslider.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="js/3dslider.js"></script>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script
+    src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.14/dist/aframe-orbit-controls-component.min.js"></script>
+</head>
+
+<body class="game_info" data-spy="scroll" data-target=".header">
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="images/loading-img.gif" alt="">
+    </div>
+    <!-- END LOADER -->
+    <section id="top">
+        
+        <header>
+            <div class="container">
+                <div class="header-top">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="full">
+                                <div class="logo">
+                                    <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right_top_section">
+                                <!-- social icon -->
+                                <ul class="social-icons pull-left">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                </ul>
+                                <!-- end social icon -->
+                                <!-- button section -->
+                                <ul class="login">
+                                    <li class="login-modal">
+                                        <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                                    </li>
+                                    <li>
+                                        <div class="cart-option">
+                                            <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- end button section -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="full">
+                                <div class="main-menu-section">
+                                    <div class="menu">
+                                        <nav class="navbar navbar-inverse">
+                                            <div class="navbar-header">
+                                                <button class="navbar-toggle" type="button" data-toggle="collapse"
+                                                    data-target=".js-navbar-collapse">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                <a class="navbar-brand" href="#">Menu</a>
+                                            </div>
+                                            <div class="collapse navbar-collapse js-navbar-collapse">
+                                                <ul class="nav navbar-nav">
+                                                    <li class="active"><a href="./">Home</a></li>
+                                                    <li><a href="https://globalgamejam.org/2023/jam-sites/ant-x-dhurakij-pundit-university">About Jam Site (เข้าสมัคร Jam Site GGJ 2023)</a></li>
+                                                    <li><a href="Contact.html">contact</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.nav-collapse -->
+                                        </nav>
+                                        <div class="search-bar">
+                                            <img src="https://ant.dpu.ac.th/gamejam/images/dpu.png" class="small_logo"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="inner-page-banner">
+            <a-scene class="aframebox" embedded vr-mode-ui="enabled: false">
+                <a-assets>
+                   <a-asset-item id="3d" src="models/monk.glb"></a-asset-item>
+                </a-assets>
+                <a-entity id="camera" camera="fov: 20; zoom: 0.5; near:0.005;" position="-3 -1 3" orbit-controls="
+                           autoRotate: false;
+                           target: #target;
+                           enableDamping: true;
+                           dampingFactor: 0.125;
+                           rotateSpeed:0.25;
+                           minDistance:1;
+                           maxDistance:3;
+                           " mouse-cursor="" rotation="0 -20 0">
+                   <a-entity geometry="primitive:cone; radius-bottom:1; radius-top:0" scale=".33 1 .33"
+                      position="0 0 2" rotation="30 0 0"
+                      material="color: #fff; transparent: true; opacity:0.1"></a-entity>
+                </a-entity>
+                
+                <a-entity id="target">
+                   <a-entity gltf-model="#3d" animation-mixer rotation="0 45 0" position="0 -3 -40"></a-entity>
+                </a-entity>
+    
+    
+             </a-scene>
+        </div>
+        <div class="inner-information-text">
+            <div class="container">
+                
+                <h3>Sign-in</h3>
+                <ul class="breadcrumb">
+                    <li><a href="./">Home</a></li>
+                    <li class="active">sign-in</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contant" class="contant main-heading team">
+        <div class="row">
+            <div class="container">
+                <div class="contact">
+
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <div class="kode-section-title">
+                                <h3>เข้าสู่ระบบสมาชิก Global Game Jam 2023</h3>
+                            </div>
+                            <div class="kode-forminfo">
+                                <p>กรุณากรอกข้อมูล Email และ Password ที่ได้ทำการสมัครไว้ในระบบ <br/>
+                                    เพื่อเข้าสู่ระบบสำหรับยืนยันสมาชิกด้วยหลักฐานการโอนเงิน 500 บาท<br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-us">
+                            <form method="post" action="login.php" method="post" class="comments-form"
+                                id="regisform">
+                                <ul>
+                                    <li><input type="text" id="email" name="email" class="required email"
+                                            placeholder="Email *" required></li>
+                                    <li><input type="password" id="password" name="password" class="required"
+                                            placeholder="Password *" required>
+                                    </li>
+                                    
+                                    <li><input class="btn" type="submit" value="Login เข้าสู่ระบบ"></li>
+                                </ul>
+                                <div class="hidden-me" id="contact_form_responce">
+                                    <p></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
